@@ -26,6 +26,8 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
+    Route::controller('index','IndexController');
 });
+
+

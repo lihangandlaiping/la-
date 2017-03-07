@@ -8,10 +8,28 @@
  */
 
 
+namespace App\models{
+/**
+ * App\models\Member
+ *
+ */
+	class Member extends \Eloquent {}
+}
+
+namespace App\models{
+/**
+ * App\models\Menu
+ *
+ * @mixin \Eloquent
+ */
+	class Menu extends \Eloquent {}
+}
+
 namespace App{
 /**
  * App\User
  *
+ * @mixin \Eloquent
  */
 	class User extends \Eloquent {}
 }

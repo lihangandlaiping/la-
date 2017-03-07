@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>喵嗨购</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="__PUBLIC__wap/css/mui.min.css">
+    <link rel="stylesheet" href="__PUBLIC__wap/css/public.css">
+    <link type="text/css" rel="stylesheet" href="font/iconfont.css" />
+    <!--组件依赖css begin-->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__wap/css/widget/navigator/navigator.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__wap/css/widget/navigator/navigator.iscroll.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__wap/css/widget/navigator/navigator.default.css" /><!--皮肤文件，若不使用该皮肤，可以不加载-->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__wap/css/widget/navigator/navigator.iscroll.default.css" /><!--皮肤文件，若不使用该皮肤，可以不加载-->
+    <!--组件依赖css end-->
+    <!--组件依赖js begin-->
+    <script type="text/javascript" src="__PUBLIC__wap/js/zepto.js"></script>
+    <script type="text/javascript" src="__PUBLIC__wap/js/zepto.extend.js"></script>
+    <script type="text/javascript" src="__PUBLIC__wap/js/zepto.ui.js"></script>
+    <script type="text/javascript" src="__PUBLIC__wap/js/zepto.iscroll.js"></script>
+    <script type="text/javascript" src="__PUBLIC__wap/js/widget/navigator.js"></script>
+    <script type="text/javascript" src="__PUBLIC__wap/js/widget/navigator.iscroll.js"></script>
+    <!--组件依赖js end-->
+</head>
+<body>
+<!--头部部分 BEGIN-->
+<div class="headerBox disbox">
+    <a class="logo"><img src="__PUBLIC__wap/images/c_logo@2x.png" /></a>
+    <div class="search disflex center gray"><i class="iconfont icon-fangdajing red"></i>换季新装热销品</div>
+    <a class="sys"><img src="__PUBLIC__wap/images/c_ic_sao@2x.png" /></a>
+</div>
+
+
+<!--头部部分 END-->
+
+<!--搜索框 BEGIN-->
+<div class="search_box">
+    <header class="search_top disbox">
+        <a class="iconfont icon-zuojiantou jt"></a>
+        <input type="text" class="disflex searchInput" placeholder="换季新装热销品" />
+        <a class="sys"><img src="__PUBLIC__wap/images/c_ic_sao@2x.png" /></a>
+    </header>
+    <h4>大家都在搜</h4>
+    <ul class="sea_child clearfix">
+        <li><a>英伦</a></li>
+        <li><a>钱包</a></li>
+        <li><a>单反相机</a></li>
+        <li><a>女包</a></li>
+    </ul>
+</div>
+<!--搜索框 END-->
+<script>
+    $(function(){
+        $('.search').click(function(){
+            $('.search_box').show();
+            $('body').addClass('ove');
+            $('#fix-both').show();
+            $('.menuShow').hide();
+            $('.hiddenBox').hide();
+        })
+        $('.jt').click(function(){
+            $('.search_box').hide();
+            $('body').removeClass('ove');
+        })
+
+
+    })
+</script>
+
+
+
+<a href="javascript:scrollTo(0,0);"><img src="__PUBLIC__wap/images/c_ic_ding@2x.png" id="to_top" /></a>
+
+{include file='$viewPath' /}
+
+
+<div class="clear"></div>
+<!--选中状态在图片名称@号前加一个b-->
+<div class="footer disbox">
+    <a class="on"><img src="__PUBLIC__wap/images/ic_home_shouyeb@2x.png" /><p>首页</p></a>
+    <a><img src="__PUBLIC__wap/images/ic_home_maozhua@2x.png" /><p>喵粉圈</p></a>
+    <a><img src="__PUBLIC__wap/images/ic_home_kefu@2x.png" /><p>喵客服</p></a>
+    <a><img src="__PUBLIC__wap/images/ic_home_gouwuche@2x.png" /><p>购物车</p></a>
+    <a><img src="__PUBLIC__wap/images/ic_home_wode@2x.png" /><p>我的</p></a>
+</div>
+<script>
+    window.onload = function(){
+        var height = $(window).height();
+        var height1 = $('body').height();
+        if( height1<height){
+            $('.footer').css('position','fixed');
+            $('.footer').css('bottom','0');
+        }
+    }
+</script>
