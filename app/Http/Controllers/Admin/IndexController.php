@@ -16,7 +16,6 @@ class IndexController extends Controller
     function getIndex(){
         $menuModel=Menu::find('1');
         $menulist=$menuModel->getMenuList();
-        Member::Abc();
-        return view('admin/index/index',['menulist'=>$menulist]);
+        return view('admin/index/index',['list'=>$menulist]);
     }
 }

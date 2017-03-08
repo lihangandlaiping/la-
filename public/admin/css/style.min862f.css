@@ -309,7 +309,6 @@ body.mini-navbar .navbar-static-side {
 body.mini-navbar .nav-label, body.mini-navbar .navbar-default .nav li a span, body.mini-navbar .profile-element {
 	display: none
 }
-body.mini-navbar .navbar-default .nav li a span.ff{ display:block}
 body.canvas-menu .profile-element {
 	display: block
 }
@@ -5411,7 +5410,8 @@ body.fixed-sidebar.mini-navbar .navbar-static-side {
 }
 @media (max-width:350px) {
 body.fixed-sidebar.mini-navbar .navbar-static-side {
-	width: 0
+	width: 0;
+	overflow:hidden;
 }
 .nav-close {
 	display: block
