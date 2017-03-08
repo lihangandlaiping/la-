@@ -938,7 +938,6 @@
                 });
                 choice.append(close_link);
             }
-            choice.append("<input type='hidden' name='classdata[]' value='"+item.value+"'/>");
             return this.search_container.before(choice);
         };
 

@@ -126,12 +126,11 @@
 		_clickHandler: function(event) {
 
 			if (!this.options.enableLinks) { event.preventDefault(); }
+
 			var target = $(event.target),
 				classList = target.attr('class') ? target.attr('class').split(' ') : [],
 				node = this._findNode(target);
-            /*---*/
-            selectinterface(target);
-            /*---*/
+
 			if ((classList.indexOf('click-expand') != -1) ||
 					(classList.indexOf('click-collapse') != -1)) {
 				// Expand or collapse node by toggling child node visibility
@@ -244,7 +243,7 @@
 		// Starting from the root node, and recursing down the
 		// structure we build the tree one node at a time
 		_buildTree: function(nodes, level) {
-            console.log(nodes);
+
 			if (!nodes) { return; }
 			level += 1;
 
@@ -299,13 +298,19 @@
 					);
 
 				// Add text
-
+				if (self.options.enableLinks) {
 					// Add hyperlink
-					treeItem.attr('datas', node.href);
-
-                treeItem.append(node.text);
-
-
+					treeItem
+						.append($(self._template.link)
+							.attr('href', node.href)
+							.append(node.text)
+						);
+				}
+				else {
+					// otherwise just text
+					treeItem
+						.append(node.text);
+				}
 
 				// Add tags as badges
 				if (self.options.showTags && node.tags) {
@@ -391,7 +396,7 @@
 			indent: '<span class="indent"></span>',
 			iconWrapper: '<span class="icon"></span>',
 			icon: '<i></i>',
-			link: '<a href="javascript:void(0);" style="color:inherit;"></a>',
+			link: '<a href="#" style="color:inherit;"></a>',
 			badge: '<span class="badge"></span>'
 		},
 
