@@ -10,7 +10,7 @@
                     <!--操作start-->
                     <div class="row">
                         <div class="col-sm-9">
-                            <button type="button" class="btn btn-w-m btn-primary" onClick="javascrtpt:window.location.href='{:url('edit')}'">新增&nbsp;<span class="glyphicon glyphicon-plus"></span></button>
+                            <button type="button" class="btn btn-w-m btn-primary" onClick="javascrtpt:window.location.href='{{url('admin/userrole/edit')}}'">新增&nbsp;<span class="glyphicon glyphicon-plus"></span></button>
                             <button type="button" class="btn btn-w-m btn-primary deleteall">删除&nbsp;<span class="glyphicon glyphicon-remove"></span></button>
                           <!--  <button type="button" class="btn btn-w-m btn-primary">排序&nbsp;<span class="glyphicon glyphicon-sort"></span></button>-->
                         </div>
@@ -77,9 +77,9 @@
                                 <td>{{$row['description']}}</td>
                                 <td>{{$row['disabled']==1?'正常':'禁用'}}</td>
                                 <td>{{$row['listorder']}}</td>
-                                <td><a href="{:url('Userrole/edit',array('action'=>'edit','id'=>$row['roleid']))}">编辑</a>&nbsp;&nbsp;&nbsp;
-                                    <a href="{:url('role',array('id'=>$row['roleid']))}" >菜单权限</a>
-                                    &nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="sendGetAjax('{:url('delete',array('id'=>$row['id']))}')">删除</a></td>
+                                <td><a href="{{url('admin/userrole/edit',array('action'=>'edit','id'=>$row['roleid']))}}">编辑</a>&nbsp;&nbsp;&nbsp;
+                                    <a href="{{url('admin/userrole/role',array('id'=>$row['roleid']))}}" >菜单权限</a>
+                                    &nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="sendGetAjax('{{url('admin/userrole/delete',array('id'=>$row['id']))}}')">删除</a></td>
                             </tr>
                             <?php endforeach;?>
 
