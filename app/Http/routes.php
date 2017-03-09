@@ -28,6 +28,7 @@ Route::get('/', function () {
 
 Route::group(['namespace' => 'Admin','prefix' => 'admin'], function () {
     Route::controller('index','IndexController');
+    Route::controller('userrole','UserRoleController');
 });
 
 

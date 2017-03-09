@@ -16,10 +16,10 @@ class Menu extends Model
     public function getMenuList($pir_list=array())
     {
         if(empty($pir_list)){
-            $pir_list=$this->where('pid','0')->get()->toArray();
+            $pir_list=$this->where('pid','0')->orderBy('sort')->get()->toArray();
         }
         foreach ($pir_list as &$value){
-            $value['child']=$this->where('pid',$value['id'])->get()->toArray();
+            $value['child']=$this->where('pid',$value['id'])->orderBy('sort')->get()->toArray();
         }
         return $pir_list;
     }

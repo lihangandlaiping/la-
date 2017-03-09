@@ -34,11 +34,11 @@
                 <div class="logo-element">H+ </div>
             </li>
             <?php foreach($list as $row):?>
-            <li> <a href="<?php echo $row['child']?'#':$row['url'];?>"> <i class="fa fa-home"></i> <span class="nav-label"><?php echo $row['title'];?></span> <span class="fa arrow"></span> </a>
+            <li> <a href="<?php echo $row['child']?'#':url($row['url']);?>"> <i class="fa fa-home"></i> <span class="nav-label"><?php echo $row['title'];?></span> <span class="fa arrow"></span> </a>
                 <?php if($row['child']):?>
                 <ul class="nav nav-second-level">
                     <?php foreach($row['child'] as $childs):?>
-                    <li> <a class="J_menuItem" href="<?php echo $childs['url'];?>" data-index="0"><?php echo $childs['title'];?></a> </li>
+                    <li> <a class="J_menuItem" href="<?php echo url($childs['url']);?>" data-index="0"><?php echo $childs['title'];?></a> </li>
                         <?php endforeach;?>
 
                 </ul>

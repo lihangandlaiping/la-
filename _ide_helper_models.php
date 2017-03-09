@@ -12,6 +12,7 @@ namespace App\models{
 /**
  * App\models\Member
  *
+ * @method static \Illuminate\Database\Query\Builder|\App\models\Member abc()
  */
 	class Member extends \Eloquent {}
 }
@@ -23,6 +24,14 @@ namespace App\models{
  * @mixin \Eloquent
  */
 	class Menu extends \Eloquent {}
+}
+
+namespace App\models{
+/**
+ * App\models\UserRole
+ *
+ */
+	class UserRole extends \Eloquent {}
 }
 
 namespace App{
